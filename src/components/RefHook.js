@@ -1,13 +1,12 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 
 function RefHook() {
 
     const inputRef = useRef(null)
 
     useEffect(() => {
-        //focus the input element
         inputRef.current.focus()
-    },[])
+    }, [])
     return (
         <div>
             <input ref={inputRef} type="text"/>

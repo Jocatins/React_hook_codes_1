@@ -9,10 +9,10 @@ class ClassTimer extends Component {
             timer: 0
         }
     }
-    componentWillMount(){
+    componentDidMount(){
         this.interval = setInterval(() => {
             this.setState(prevState => ({timer: prevState.timer + 1}))
-        }, 700)
+        }, 1000)
     }
     componentWillUnmount(){
         clearInterval(this.interval)
@@ -20,12 +20,11 @@ class ClassTimer extends Component {
     render() {
         return (
             <div>
-                class timer - {this.state.timer}
-                <button onClick={() => clearInterval(this.interval)}>ClearTimer</button>
+                Class Timer - {this.state.timer}
+                <button onClick={()=> clearInterval(this.interval)}>Stop Time</button>
             </div>
         )
     }
 }
 
 export default ClassTimer
-
